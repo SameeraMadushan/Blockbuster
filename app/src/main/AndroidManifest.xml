@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ctse.sliit.blockbuster">
+    package="com.sliit.blockbuster">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -9,13 +13,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MovieListActivity">
+        <activity android:name=".MovieMainActivity">
+        </activity>
+        <activity
+            android:label="@string/movieDetail"
+            android:name=".MovieDetailView"
+            android:parentActivityName=".MovieMainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MovieMainActivity" />
+        </activity>
+        <activity
+            android:label="@string/movieWeb"
+            android:name=".MovieDetailWebView"
+            android:parentActivityName=".MovieDetailView">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MovieDetailView" />
+        </activity>
+        <activity
+            android:name=".MovieSplashScreen"
+            android:theme="@style/AppThemeSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

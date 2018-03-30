@@ -1,4 +1,4 @@
-package com.ctse.sliit.blockbuster;
+package com.sliit.blockbuster;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.ctse.sliit.blockbuster", appContext.getPackageName());
+        assertEquals( "com.sliit.blockbuster", appContext.getPackageName() );
     }
 }
